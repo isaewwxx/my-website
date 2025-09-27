@@ -1,0 +1,187 @@
+/* Plus Jakarta Sans Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: 'cv05', 'cv08', 'cv11';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #764ba2, #667eea);
+}
+
+/* Selection Colors */
+::selection {
+  background-color: rgba(212, 70, 239, 0.2);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: rgba(212, 70, 239, 0.2);
+  color: white;
+}
+
+/* Custom Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.15);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 50px rgba(102, 126, 234, 0.2);
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Keyframes are defined in tailwind.config.js */
+
+/* Focus States */
+.focus-visible:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  @apply bg-gradient-to-r from-primary-500 to-accent-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-glow transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-glassmorphism text-white border border-white/20 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white/30;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-glassmorphism rounded-xl p-6 shadow-glow transition-all duration-300 hover:shadow-glow-lg hover:transform hover:scale-[1.02];
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-white/10 to-white/5 rounded-xl p-6 backdrop-blur-lg border border-white/20 shadow-glow transition-all duration-300 hover:shadow-glow-lg;
+}
+
+/* Navigation Styles */
+.nav-link {
+  @apply text-white/80 hover:text-white transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Media Queries for Enhanced Responsiveness */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .heading-responsive {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-glassmorphism {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .bg-glassmorphism,
+  .card,
+  .card-gradient {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
