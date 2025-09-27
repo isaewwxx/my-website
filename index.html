@@ -3,31 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Georgi Isaev - Full Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .hero .description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .project {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .project h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .project .project-type {
+            color: #7f8c8d;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .project ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .project li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .project a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .project a:hover {
+            text-decoration: underline;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+        
+        .year {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .contact-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .contact-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    
-    <main>
-        <section>
-            <h2>About</h2>
-            <p>This is a simple website project built as part of my web development journey.</p>
-        </section>
+    <div class="container">
+        <div class="hero">
+            <h1>Georgi Isaev</h1>
+            <div class="subtitle">Full Stack Developer | Software Engineer</div>
+            <div class="description">
+                17-year-old developer passionate about creating innovative web applications and Discord bots. 
+                Currently studying Economic Informatics while building modern digital solutions.
+            </div>
+        </div>
         
-        <section>
-            <h2>Features</h2>
-            <ul>
-                <li>Clean and simple HTML structure</li>
-                <li>Responsive design ready</li>
-                <li>Modern semantic HTML</li>
-            </ul>
-        </section>
-    </main>
+        <div class="section">
+            <h2>🚀 About Me</h2>
+            <p>I'm Georgi Isaev, a dedicated developer from Sofia, Bulgaria, studying at the National High School in Finance and Business. My journey in programming began in 2021 during the pandemic, and I've been constantly learning and expanding my skills in web development, bot creation, and modern programming practices.</p>
+        </div>
+        
+        <div class="section">
+            <h2>💼 Featured Projects</h2>
+            
+            <div class="project">
+                <h3>🛡️ Aegis Bot</h3>
+                <div class="project-type">Discord Moderation & Management Bot</div>
+                <ul>
+                    <li>Advanced server management and moderation tools</li>
+                    <li>Comprehensive functionality for Discord communities</li>
+                    <li>Built with Discord.js, MongoDB, and JavaScript</li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <h3>🦫 CapybaraHosting Website</h3>
+                <div class="project-type">Game Server Hosting Platform</div>
+                <ul>
+                    <li>Modern website for high-performance game server hosting</li>
+                    <li>Supports Minecraft, Rust, and FiveM servers</li>
+                    <li>Developed with React, Node.js, and Tailwind CSS</li>
+                    <li><a href="https://capybarahosting.xyz/" target="_blank">Visit CapybaraHosting</a></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <h3>💰 Infininode</h3>
+                <div class="project-type">Financial Management Platform</div>
+                <ul>
+                    <li>Comprehensive financial tracking and management</li>
+                    <li>Interactive dashboard with secure authentication</li>
+                    <li>Built with Next.js, PostgreSQL, and Auth.js</li>
+                    <li><a href="https://infininode.fun/" target="_blank">Visit Platform</a></li>
+                    <li><em>Note: Educational purposes only</em></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🛠️ Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, JavaScript, React, Next.js</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <p>Node.js, Express, PostgreSQL, MongoDB</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <p>Discord.js, Tailwind CSS, Auth.js</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <p>Git, GitHub, Database Management</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎓 Education</h2>
+            <div class="project">
+                <h3>National High School in Finance and Business</h3>
+                <div class="project-type">Economic Informatics | 2021 - Present</div>
+                <ul>
+                    <li>Economic Informatics Program</li>
+                    <li>Focus on Object-Oriented Programming, Databases, and Entrepreneurship</li>
+                    <li>Advanced English and Business Studies</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📈 Development Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2021</div>
+                    <p>Started with my first Discord bot (simple !ping command)</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2022</div>
+                    <p>Developed Aegis Bot with advanced functionality</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2022-2024</div>
+                    <p>Period of focused learning and skill development</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2025</div>
+                    <p>Built CapybaraHosting platform and launched Infininode</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🤝 Connect With Me</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>Website</strong>
+                    <a href="https://isaewwxx.xyz" target="_blank">isaewwxx.xyz</a>
+                </div>
+                <div class="contact-item">
+                    <strong>GitHub</strong>
+                    <a href="https://github.com/isaewwxx" target="_blank">github.com/isaewwxx</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:webmaster@isaewwxx.xyz">webmaster@isaewwxx.xyz</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Discord</strong>
+                    <span>isaewwxx<br>ID: 251627016292401154</span>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <p><em>Building the future, one line of code at a time.</em> 🌟</p>
+        <p>&copy; 2025 Georgi Isaev. All rights reserved.</p>
     </footer>
 </body>
 </html>
